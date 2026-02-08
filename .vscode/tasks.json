@@ -1,0 +1,16 @@
+{
+  // tasks.json for VS Code
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Launch marumoro-kanji-printer dev server",
+      "type": "shell",
+      "command": "docker compose up",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "isBackground": true
+    }
+  ]
+}

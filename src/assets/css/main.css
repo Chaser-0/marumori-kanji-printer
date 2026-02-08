@@ -1,0 +1,6 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: kso;
+  src: url("@/assets/font/KanjiStrokeOrders.woff2") format("woff2");
+}
