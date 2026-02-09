@@ -19,6 +19,7 @@ This simple web app shows a random kanji you already learned and let you print i
 
 ## Roadmap
 - [x] Portrait mode
+- [ ] "App" UI
 - [ ] E-Ink mode
 - [ ] Actual automation
 - [ ] Support for large format printers
