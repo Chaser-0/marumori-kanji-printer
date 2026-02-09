@@ -1,9 +1,9 @@
 <template>
-  <div v-if="selectedKanji && kanjiData" class="flex flex-col gap-2 justify-between | h-screen not-print:h-[58mm] p-4 overflow-hidden | bg-white text-black">
+  <div v-if="selectedKanji && kanjiData" class="flex flex-col gap-2 justify-between | h-screen not-print:h-[58mm] py-[6mm] px-2 overflow-hidden | bg-white text-black">
     <div class="flex gap-2">
-      <span class="text-7xl">{{ selectedKanji }}</span>
+      <span class="text-6xl">{{ selectedKanji }}</span>
       <div class="flex flex-col justify-between">
-        <span class="text-xl">{{ kanjiData.meanings.join(', ') }}</span>
+        <span class="text-sm text-nowrap text-ellipsis overflow-hidden">{{ kanjiData.meanings.join(', ') }}</span>
         <span class="text-nowrap text-ellipsis overflow-hidden">{{ kanjiData.kunyomi.join(', ') }}</span>
         <span class="text-nowrap text-ellipsis overflow-hidden">{{ kanjiData.onyomi.join(', ') }}</span>
       </div>
@@ -12,7 +12,7 @@
     <div class="flex gap-4">
       <KanjiBox :kanji="selectedKanji"></KanjiBox>
 
-      <KanjiBox v-for="i in 3"></KanjiBox>
+      <KanjiBox v-for="i in 6"></KanjiBox>
     </div>
   </div>
 </template>
