@@ -1,6 +1,6 @@
 # marumori-kanji-printer
 This simple web app shows a random kanji you already learned and let you print it with a thermal printer. 
-![](docs/screenshot.png)
+![](docs/screenshot-landscape.png)
 
 ## How to set up
 1. Clone this repo
@@ -9,8 +9,16 @@ This simple web app shows a random kanji you already learned and let you print i
 4. Hit F5
 5. Press Ctrl + P in Chromium to print
 
+## Features
+### Thermal printer support
+#### Landscape
+![](docs/screenshot-landscape.png)
+
+#### Portrait
+![](docs/screenshot-portrait.png)
+
 ## Roadmap
-- [ ] Portrait mode
+- [x] Portrait mode
 - [ ] E-Ink mode
 - [ ] Actual automation
 - [ ] Support for large format printers

@@ -1,6 +1,6 @@
 <template>
-  <div class="relative | inline-flex justify-center items-center | border-2 border-black min-w-24 min-h-24">
-    <span v-if="kanji" class="relative z-10 text-8xl font-[kso]">{{ kanji }}</span>
+  <div class="relative | inline-flex justify-center items-center | border-2 border-black w-[1em] h-[1em] min-w-[1em] min-h-[1em] max-w-[1em] max-h-[1em] aspect-square | overflow-hidden">
+    <span v-if="kanji" class="relative z-10 font-[kso]">{{ kanji }}</span>
     <div class="crossedBorder | absolute top-0 left-0 w-full h-full"></div>
   </div>
 </template>
