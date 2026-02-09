@@ -9,17 +9,5 @@ services:
       - ./:/opt/app
     ports:
       - "3000:3000"
-    networks:
-      - valet
     env_file:
       - ".env"
-    labels:
-      - "certDomain.0=marumori-kanji.test"
-      - "traefik.enable=true"
-      - "traefik.http.routers.honeebot.rule=Host(`marumori-kanji.test`)"
-      - "traefik.http.services.honeebot.loadbalancer.server.port=3000"
-      - "traefik.docker.network=valet"
-
-networks:
-  valet:
-    external: true
