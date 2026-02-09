@@ -8,3 +8,9 @@ This simple web app shows a random kanji you already learned and let you print i
 3. Copy .env.example to .env and fill in your Marumori API key
 4. Hit F5
 5. Press Ctrl + P in Chromium to print
+
+## Roadmap
+- [ ] Portrait mode
+- [ ] E-Ink mode
+- [ ] Actual automation
+- [ ] Support for large format printers
