@@ -1,11 +1,19 @@
 <template>
-  <PrinterView v-if="selectedKanji && kanjiData" :selected-kanji="selectedKanji" :kanji-data="kanjiData" class="" />
+  <template v-if="selectedKanji && kanjiData">
+    <div class="not-print:hidden">
+      <PrinterView :selected-kanji="selectedKanji" :kanji-data="kanjiData" />
+    </div>
+    <DisplayView :selected-kanji="selectedKanji" :kanji-data="kanjiData" class="print:hidden" />
+  </template>
+
+  <span v-else>Loading…</span>
 </template>
 
 <script setup lang="ts">
 import { computed, onMounted, ref } from 'vue';
 import kanji from 'kanji.js';
-import PrinterView from './views/PrinterView.vue';
+import PrinterView from '@/views/PrinterView.vue';
+import DisplayView from '@/views/DisplayView.vue';
 
 const selectedKanji = ref<string|null>(null);
 const kanjiData = computed(() => {

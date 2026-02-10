@@ -12,14 +12,21 @@ This simple web app shows a random kanji you already learned and let you print i
 ## Features
 ### Thermal printer support
 #### Landscape
-![](docs/screenshot-landscape.png)
+![](docs/thermal-landscape.png)
 
 #### Portrait
-![](docs/screenshot-portrait.png)
+![](docs/thermal-portrait.png)
+
+### Simple ui
+#### Landscape
+![](docs/app-landscape.png)
+
+#### Portrait
+![](docs/app-portrait.png)
 
 ## Roadmap
 - [x] Portrait mode
-- [ ] "App" UI
+- [x] "App" UI
 - [ ] E-Ink mode
 - [ ] Actual automation
 - [ ] Support for large format printers
