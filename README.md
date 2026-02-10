@@ -11,22 +11,23 @@ This simple web app shows a random kanji you already learned and let you print i
 
 ## Features
 ### Thermal printer support
-#### Landscape
 ![](docs/thermal-landscape.png)
-
-#### Portrait
 ![](docs/thermal-portrait.png)
 
-### Simple ui
-#### Landscape
+### Web ui
 ![](docs/app-landscape.png)
-
-#### Portrait
 ![](docs/app-portrait.png)
+
+#### …with stylus support
+Just touch your screen with your pen to enable.
+
+![](docs/stylus-landscape.png)
+![](docs/stylus-portrait.png)
 
 ## Roadmap
 - [x] Portrait mode
 - [x] "App" UI
-- [ ] E-Ink mode
-- [ ] Actual automation
+- [x] Stylus mode
+- [ ] E-Ink friendly high contrast theme
 - [ ] Support for large format printers
+- [ ] Actual automation
