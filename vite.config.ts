@@ -18,6 +18,13 @@ export default defineConfig({
   server: {
     allowedHosts: [
       'marumori-kanji.test'
-    ]
+    ],
+    proxy: {
+      '/api': {
+        target: 'https://public-api.marumori.io',
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api/, '')
+      }
+    }
   }
 })

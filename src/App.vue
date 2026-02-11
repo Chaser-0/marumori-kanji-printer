@@ -25,7 +25,7 @@ const kanjiData = computed(() => {
 });
 
 onMounted(async () => {
-  const kanjiRes = await fetch('https://public-api.marumori.io/known/kanji', {headers: {Authorization: `Bearer ${import.meta.env.VITE_MARUMORI_API_KEY}`}});
+  const kanjiRes = await fetch('/api/known/kanji', {headers: {Authorization: `Bearer ${import.meta.env.VITE_MARUMORI_API_KEY}`}});
   const learnedKanjis: {
     success: boolean,
     items: {
