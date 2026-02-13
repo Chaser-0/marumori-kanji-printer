@@ -1,7 +1,7 @@
 <template>
-  <div class="relative | inline-flex justify-center items-center | border-2 print:border-black border-amber-700 w-[1em] h-[1em] min-w-[1em] min-h-[1em] max-w-[1em] max-h-[1em] aspect-square | overflow-hidden">
+  <div class="relative | inline-flex justify-center items-center | border-2 print:border-black border-amber-700 contrast-more:border-black | w-[1em] h-[1em] min-w-[1em] min-h-[1em] max-w-[1em] max-h-[1em] aspect-square | overflow-hidden">
     <span v-if="kanji" class="relative z-10 font-[kso]">{{ kanji }}</span>
-    <div class="crossedBorder print:before:border-gray-500! print:after:border-gray-500! before:border-amber-900! after:border-amber-900! | absolute top-0 left-0 w-full h-full"></div>
+    <div class="crossedBorder print:before:border-gray-500! print:after:border-gray-500! contrast-more:before:border-gray-500! contrast-more:after:border-gray-500! before:border-amber-900! after:border-amber-900! | absolute top-0 left-0 w-full h-full"></div>
     <canvas v-if="allowInkMode" ref="inkCanvas" class="absolute top-0 left-0 w-full h-full | touch-none"></canvas>
   </div>
 </template>
