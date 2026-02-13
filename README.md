@@ -29,6 +29,7 @@ Just touch your screen with your pen to enable.
 - [x] "App" UI
 - [x] Stylus mode
 - [x] E-Ink friendly high contrast theme
-- [ ] PWA
+- [x] PWA
+- [ ] Save settings in local storage
 - [ ] Support for large format printers
 - [ ] Actual automation
