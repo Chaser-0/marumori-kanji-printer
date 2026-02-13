@@ -31,5 +31,6 @@ Just touch your screen with your pen to enable.
 - [x] E-Ink friendly high contrast theme
 - [x] PWA
 - [ ] Save settings in local storage
+- [ ] Add service worker
 - [ ] Support for large format printers
 - [ ] Actual automation
