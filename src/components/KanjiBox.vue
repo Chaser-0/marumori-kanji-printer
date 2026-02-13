@@ -65,8 +65,8 @@ onMounted(async () => {
 
       lastPressure = lastPressure * 0.7 + targetPressure * 0.3;
       
-      const baseSize = isEraser ? 30 : 12;
-      const thickness = Math.max(1, lastPressure * baseSize);
+      const baseSize = isEraser ? 60 : 12;
+      let thickness = Math.max(1, lastPressure * baseSize);
       
       ctx.lineWidth = thickness;
       if (!isEraser) {
