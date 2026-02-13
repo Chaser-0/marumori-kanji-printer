@@ -1,5 +1,5 @@
 <template>
-  <main class="relative| flex flex-col | w-screen min-h-screen">
+  <main class="relative| flex flex-col | w-screen min-h-screen p-4">
     <PrintConfigSection class="md:absolute top-2 right-2" />
 
     <div class="portrait:hidden flex flex-col gap-8 m-auto justify-center items-center | w-full h-full">

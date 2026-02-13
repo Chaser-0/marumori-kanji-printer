@@ -14,7 +14,7 @@ This simple web app shows a random kanji you already learned and let you print i
 ![](docs/thermal-landscape.png)
 ![](docs/thermal-portrait.png)
 
-### Web ui
+### Web ui (also available as high contrast theme for e-ink screens)
 ![](docs/app-landscape.png)
 ![](docs/app-portrait.png)
 
@@ -28,6 +28,7 @@ Just touch your screen with your pen to enable.
 - [x] Portrait mode
 - [x] "App" UI
 - [x] Stylus mode
-- [ ] E-Ink friendly high contrast theme
+- [x] E-Ink friendly high contrast theme
+- [ ] PWA
 - [ ] Support for large format printers
 - [ ] Actual automation
