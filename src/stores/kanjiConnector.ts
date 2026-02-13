@@ -14,7 +14,24 @@ export const useKanjiConnectorStore = defineStore('kanjiConnector', () => {
   });
 
   const fetchLearnedKanjis = async () => {
-    const kanjiRes = await fetch('/api/known/kanji', {headers: {Authorization: `Bearer ${import.meta.env.VITE_MARUMORI_API_KEY}`}});
+    const settings = useSettingsStore();
+
+    switch (settings.kanjiApi) {
+      case 'marumori': await fetchLearnedKanjisFromMarumori(); break;
+    }
+
+    selectRandomKanji();
+  };
+
+  const fetchLearnedKanjisFromMarumori = async () => {
+    const settings = useSettingsStore();
+
+    let host = '';
+    if (!import.meta.env.DEV) {
+      host = 'https://public-api.marumori.io';
+    }
+
+    const kanjiRes = await fetch(`${host}/api/known/kanji`, {headers: {Authorization: `Bearer ${settings.marumoriApiKey}`}});
     const learnedKanjisData: {
       success: boolean,
       items: {
@@ -25,9 +42,7 @@ export const useKanjiConnectorStore = defineStore('kanjiConnector', () => {
     } = await kanjiRes.json();
 
     learnedKanjis.value = learnedKanjisData.items.map(i => i.item);
-
-    selectRandomKanji();
-  };
+  }
 
   const selectRandomKanji = () => {
     const index = Math.floor(Math.random() * learnedKanjis.value.length);
