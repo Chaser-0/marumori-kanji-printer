@@ -1,45 +1,35 @@
 <template>
-  <template v-if="selectedKanji && kanjiData">
+  <template v-if="kanjiConnector.selectedKanji && kanjiData">
     <div class="not-print:hidden">
-      <PrinterView :selected-kanji="selectedKanji" :kanji-data="kanjiData" />
+      <PrinterView :selected-kanji="kanjiConnector.selectedKanji" :kanji-data="kanjiData" />
     </div>
-    <DisplayView :selected-kanji="selectedKanji" :kanji-data="kanjiData" class="print:hidden" />
+    <DisplayView :selected-kanji="kanjiConnector.selectedKanji" :kanji-data="kanjiData" class="print:hidden" />
   </template>
 
   <span v-else>Loading…</span>
 </template>
 
 <script setup lang="ts">
-import { computed, onMounted, ref, watch } from 'vue';
+import { computed, onMounted, watch } from 'vue';
 import kanji from 'kanji.js';
 import PrinterView from '@/views/PrinterView.vue';
 import DisplayView from '@/views/DisplayView.vue';
+import { useKanjiConnectorStore } from './stores/kanjiConnector';
 
-const selectedKanji = ref<string|null>(null);
-watch(selectedKanji, v => setKanjiFavicon(v || ''));
+const kanjiConnector = useKanjiConnectorStore();
+
+watch(() => kanjiConnector.selectedKanji, v => setKanjiFavicon(v || ''));
 
 const kanjiData = computed(() => {
-  if (!selectedKanji.value) {
+  if (!kanjiConnector.selectedKanji) {
     return;
   }
 
-  return kanji.getDetails(selectedKanji.value);
+  return kanji.getDetails(kanjiConnector.selectedKanji);
 });
 watch(kanjiData, v => window.document.title = v?.meanings.join(', ') || '');
 
 onMounted(async () => {
-  const kanjiRes = await fetch('/api/known/kanji', {headers: {Authorization: `Bearer ${import.meta.env.VITE_MARUMORI_API_KEY}`}});
-  const learnedKanjis: {
-    success: boolean,
-    items: {
-      _id: string,
-      item: string,
-      level: number
-    }[]
-  } = await kanjiRes.json();
-
-  const index = Math.floor(Math.random() * learnedKanjis.items.length);
-  selectedKanji.value = learnedKanjis.items[index]!.item;
 });
 
 const setKanjiFavicon = (kanji: string) => {
